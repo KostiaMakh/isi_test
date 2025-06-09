@@ -1,0 +1,18 @@
+version: '3.11'
+
+services:
+  app:
+    build: .
+    restart: always
+    entrypoint: ./entrypoint.sh
+    volumes:
+      - .:/usr/src/isi-test-api/
+    networks:
+      - app_network
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+
+networks:
+  app_network:
