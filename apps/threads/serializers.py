@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from django.db.models import Count
+from django.db.models import Count, Q
 
 from rest_framework import serializers
 from threads.models import (
@@ -92,12 +92,15 @@ class ThreadCreateSerializer(serializers.ModelSerializer):
         participants = validated_data['participants']
         participant_ids = sorted(user.id for user in participants)
 
+        # Check existing of similar thread
         existing_threads = Thread.objects.annotate(num_participants=Count('participants')).filter(num_participants=2)
         for thread in existing_threads:
             thread_participant_ids = sorted(thread.participants.values_list('id', flat=True))
             if thread_participant_ids == participant_ids:
                 return thread
 
+        # create new
         thread = Thread.objects.create()
         thread.participants.set(participants)
         return thread
+

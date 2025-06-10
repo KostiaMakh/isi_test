@@ -84,7 +84,7 @@ class MessageViewSet(mixins.RetrieveModelMixin,
 
         return messages
 
-    @action(detail=True, methods=['post'], url_path='marls-as-read')
+    @action(detail=True, methods=['post'], url_path='mark-as-read')
     def mark_as_read(self, request, pk=None):
         try:
             message = self.get_object()
