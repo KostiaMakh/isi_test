@@ -1,0 +1,188 @@
+[
+{
+    "model": "accounts.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$ezKfrVbUagvcdHZJAyeBXe$wck7h36EtHOTeaZsxC2fxW7JJFF+jduiyq1yhnu4A0o=",
+        "last_login": null,
+        "is_superuser": true,
+        "first_name": null,
+        "last_name": null,
+        "email": "isi@admin.com",
+        "phone_number": null,
+        "date_of_birthday": null,
+        "is_active": true,
+        "is_admin": true,
+        "is_staff": true,
+        "created_at": "2025-06-10T04:46:30.399Z",
+        "updated_at": "2025-06-10T04:46:30.767Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "string",
+        "last_name": "string",
+        "email": "user1@example.com",
+        "phone_number": null,
+        "date_of_birthday": null,
+        "is_active": false,
+        "is_admin": false,
+        "is_staff": false,
+        "created_at": "2025-06-10T04:52:54.380Z",
+        "updated_at": "2025-06-10T04:52:54.380Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "string",
+        "last_name": "string",
+        "email": "user2@example.com",
+        "phone_number": null,
+        "date_of_birthday": null,
+        "is_active": false,
+        "is_admin": false,
+        "is_staff": false,
+        "created_at": "2025-06-10T04:52:57.591Z",
+        "updated_at": "2025-06-10T04:52:57.591Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "Makar",
+        "last_name": "Petrov",
+        "email": "user3@example.com",
+        "phone_number": null,
+        "date_of_birthday": null,
+        "is_active": false,
+        "is_admin": false,
+        "is_staff": false,
+        "created_at": "2025-06-10T04:53:29.753Z",
+        "updated_at": "2025-06-10T04:53:29.753Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "threads.thread",
+    "pk": 1,
+    "fields": {
+        "created_at": "2025-06-10T04:54:02.290Z",
+        "updated_at": "2025-06-10T04:54:02.290Z",
+        "participants": [
+            [
+                "user1@example.com"
+            ],
+            [
+                "user2@example.com"
+            ]
+        ]
+    }
+},
+{
+    "model": "threads.thread",
+    "pk": 2,
+    "fields": {
+        "created_at": "2025-06-10T04:54:14.898Z",
+        "updated_at": "2025-06-10T04:54:14.898Z",
+        "participants": [
+            [
+                "user1@example.com"
+            ],
+            [
+                "user3@example.com"
+            ]
+        ]
+    }
+},
+{
+    "model": "threads.thread",
+    "pk": 3,
+    "fields": {
+        "created_at": "2025-06-10T04:54:18.991Z",
+        "updated_at": "2025-06-10T04:54:18.991Z",
+        "participants": [
+            [
+                "user2@example.com"
+            ],
+            [
+                "user3@example.com"
+            ]
+        ]
+    }
+},
+{
+    "model": "threads.thread",
+    "pk": 4,
+    "fields": {
+        "created_at": "2025-06-10T04:54:31.351Z",
+        "updated_at": "2025-06-10T04:54:31.351Z",
+        "participants": [
+            [
+                "isi@admin.com"
+            ],
+            [
+                "user1@example.com"
+            ]
+        ]
+    }
+},
+{
+    "model": "threads.message",
+    "pk": 1,
+    "fields": {
+        "created_at": "2025-06-10T04:54:55.328Z",
+        "updated_at": "2025-06-10T04:58:24.315Z",
+        "thread": 4,
+        "sender": [
+            "isi@admin.com"
+        ],
+        "text": "Hello, how is it going?",
+        "is_read": true
+    }
+},
+{
+    "model": "threads.message",
+    "pk": 2,
+    "fields": {
+        "created_at": "2025-06-10T04:55:09.832Z",
+        "updated_at": "2025-06-10T04:55:09.832Z",
+        "thread": 4,
+        "sender": [
+            "isi@admin.com"
+        ],
+        "text": "Are you here?",
+        "is_read": false
+    }
+},
+{
+    "model": "threads.message",
+    "pk": 3,
+    "fields": {
+        "created_at": "2025-06-10T04:55:31.593Z",
+        "updated_at": "2025-06-10T04:55:31.593Z",
+        "thread": 4,
+        "sender": [
+            "isi@admin.com"
+        ],
+        "text": "Did yoy have a chance to check mine commit?",
+        "is_read": false
+    }
+}
+]

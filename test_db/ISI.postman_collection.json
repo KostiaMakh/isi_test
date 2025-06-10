@@ -1,0 +1,289 @@
+{
+	"info": {
+		"_postman_id": "e186a298-c568-4e2c-bf51-2c2d97ff8b89",
+		"name": "ISI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26396034"
+	},
+	"item": [
+		{
+			"name": "user details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ5NTA0MTMzLCJpYXQiOjE3NDk1MDMyMzMsImp0aSI6IjI1NDBmM2M2NTE5ODQ5YWZiMGQ5NjdkMjFkYTJlMTFjIiwidXNlcl9pZCI6MX0.U_TFkYj8LyHfeT3_sB2YLzhBP3e3tyknoIDdPW5NsUM"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"first_name\": \"string\",\n  \"last_name\": \"string\",\n  \"email\": \"user@example.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/v1/users/1/"
+			},
+			"response": []
+		},
+		{
+			"name": "threads list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ5NTA0MTMzLCJpYXQiOjE3NDk1MDMyMzMsImp0aSI6IjI1NDBmM2M2NTE5ODQ5YWZiMGQ5NjdkMjFkYTJlMTFjIiwidXNlcl9pZCI6MX0.U_TFkYj8LyHfeT3_sB2YLzhBP3e3tyknoIDdPW5NsUM"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/v1/threads/"
+			},
+			"response": []
+		},
+		{
+			"name": "create thread",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ5NTMwOTU4LCJpYXQiOjE3NDk1MzAwNTgsImp0aSI6IjY2MjQ4NDFhOTkxNzQ5YTU4MjAwYWFmMDhiY2E2ZWI0IiwidXNlcl9pZCI6MX0.2J_PRIED1fRYKg9Q-wAWq5PEcOO-PyN80MLdLLjRknc"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"participants\": [1, 2]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/v1/threads/"
+			},
+			"response": []
+		},
+		{
+			"name": "create user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ5NTA0MTMzLCJpYXQiOjE3NDk1MDMyMzMsImp0aSI6IjI1NDBmM2M2NTE5ODQ5YWZiMGQ5NjdkMjFkYTJlMTFjIiwidXNlcl9pZCI6MX0.U_TFkYj8LyHfeT3_sB2YLzhBP3e3tyknoIDdPW5NsUM"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"first_name\": \"string\",\n  \"last_name\": \"string\",\n  \"email\": \"use3r@example.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/v1/users/"
+			},
+			"response": []
+		},
+		{
+			"name": "send-message",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ5NTA1MDc2LCJpYXQiOjE3NDk1MDQxNzYsImp0aSI6IjEzMjBjZGFmYWE1NzRkY2FiNjRjODFjMzI4MzIxZTBlIiwidXNlcl9pZCI6MX0.HJ_V3MZ0UoKIWFEuVgNLMavtp31k-V_bmwM0mi6f1yU"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\": \"Hello, how is it going?\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/v1/threads/4/send-message/"
+			},
+			"response": []
+		},
+		{
+			"name": "thread details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ5NTA1MDc2LCJpYXQiOjE3NDk1MDQxNzYsImp0aSI6IjEzMjBjZGFmYWE1NzRkY2FiNjRjODFjMzI4MzIxZTBlIiwidXNlcl9pZCI6MX0.HJ_V3MZ0UoKIWFEuVgNLMavtp31k-V_bmwM0mi6f1yU"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"participants\": [1, 2]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/v1/threads/4/"
+			},
+			"response": []
+		},
+		{
+			"name": "create user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ5NTMwOTU4LCJpYXQiOjE3NDk1MzAwNTgsImp0aSI6IjY2MjQ4NDFhOTkxNzQ5YTU4MjAwYWFmMDhiY2E2ZWI0IiwidXNlcl9pZCI6MX0.2J_PRIED1fRYKg9Q-wAWq5PEcOO-PyN80MLdLLjRknc"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"first_name\": \"string\",\n  \"last_name\": \"string\",\n  \"email\": \"user4@example.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/v1/users/"
+			},
+			"response": []
+		},
+		{
+			"name": "users list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ5NTMwOTU4LCJpYXQiOjE3NDk1MzAwNTgsImp0aSI6IjY2MjQ4NDFhOTkxNzQ5YTU4MjAwYWFmMDhiY2E2ZWI0IiwidXNlcl9pZCI6MX0.2J_PRIED1fRYKg9Q-wAWq5PEcOO-PyN80MLdLLjRknc"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"first_name\": \"string\",\n  \"last_name\": \"string\",\n  \"email\": \"user4@example.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/v1/users/"
+			},
+			"response": []
+		},
+		{
+			"name": "auth",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ5NTMwOTU4LCJpYXQiOjE3NDk1MzAwNTgsImp0aSI6IjY2MjQ4NDFhOTkxNzQ5YTU4MjAwYWFmMDhiY2E2ZWI0IiwidXNlcl9pZCI6MX0.2J_PRIED1fRYKg9Q-wAWq5PEcOO-PyN80MLdLLjRknc"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"isi@admin.com\",\n  \"password\": \"cvre87fv8f7dv8re\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/v1/token/"
+			},
+			"response": []
+		},
+		{
+			"name": "message details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ5NTMyMDM5LCJpYXQiOjE3NDk1MzExMzksImp0aSI6ImZkNTk5Y2ZjZGY1ZDQ0OGZiMDEyN2ViNjQ2ZmU3MjZhIiwidXNlcl9pZCI6MX0.YaI9uMFjGEbchvJ3G2L5zBXEZOY-eSL8HHtVX7HyS1c"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\": \"Did yoy have a chance to check mine commit?\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/v1/messages/1/"
+			},
+			"response": []
+		},
+		{
+			"name": "message mark as read",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ5NTMyMDM5LCJpYXQiOjE3NDk1MzExMzksImp0aSI6ImZkNTk5Y2ZjZGY1ZDQ0OGZiMDEyN2ViNjQ2ZmU3MjZhIiwidXNlcl9pZCI6MX0.YaI9uMFjGEbchvJ3G2L5zBXEZOY-eSL8HHtVX7HyS1c"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/v1/messages/1/mark-as-read/"
+			},
+			"response": []
+		}
+	]
+}
