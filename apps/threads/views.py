@@ -13,6 +13,7 @@ from threads.models import (
     Thread,
     Message,
 )
+from threads.permissions import IsMessageSenderOrAdminOrReadOnly
 from threads.serializers import (
     ThreadSerializer,
     MessageSerializer,
@@ -30,9 +31,10 @@ class ThreadViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         user = self.request.user
-        threads = Thread.objects.filter(participants=user)
+        if user.is_staff:
+            return Thread.objects.all()
 
-        return threads
+        return Thread.objects.filter(participants=user)
 
     @swagger_auto_schema(
         request_body=ThreadCreateSerializer,
@@ -77,17 +79,33 @@ class MessageViewSet(mixins.RetrieveModelMixin,
                    mixins.ListModelMixin,
                    GenericViewSet):
     serializer_class = MessageSerializer
+    permission_classes = [
+        IsMessageSenderOrAdminOrReadOnly,
+        IsAuthenticated
+    ]
 
     def get_queryset(self):
         user = self.request.user
+
+        if user.is_staff:
+            return Message.objects.all()
+
         messages = Message.objects.filter(thread__participants=user)
 
         return messages
 
     @action(detail=True, methods=['post'], url_path='mark-as-read')
     def mark_as_read(self, request, pk=None):
+        user = self.request.user
         try:
             message = self.get_object()
+
+            if message.sender != user:
+                return Response(
+                    {"status": "you can't change status of other one message"},
+                    status=status.HTTP_403_FORBIDDEN
+                )
+
             message.is_read = True
             message.save()
             return Response(
